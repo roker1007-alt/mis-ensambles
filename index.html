@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector de Componentes para Ensamble de PC</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-blue: #38bdf8;
+            --accent-green: #34d399;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --button-hover: #0284c7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-blue);
+        }
+
+        p.subtitle {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 550px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .build-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.8rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .build-card h2 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #334155;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .build-1 h2 { color: var(--accent-blue); }
+        .build-2 h2 { color: var(--accent-green); }
+
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .component-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0f172a;
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.9rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            transition: all 0.2s ease-in-out;
+            font-size: 0.95rem;
+        }
+
+        .component-btn:hover {
+            background-color: var(--button-hover);
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+            color: #ffffff;
+        }
+
+        .component-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .component-type {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-sub);
+            margin-bottom: 0.2rem;
+        }
+
+        .component-btn:hover .component-type {
+            color: #e2e8f0;
+        }
+
+        .component-name {
+            font-weight: 600;
+        }
+
+        .icon {
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ensambles de PC Recomendados</h1>
+        <p class="subtitle">Selecciona cualquier componente para abrir el enlace directo a la tienda</p>
+    </header>
+
+    <main class="container">
+        <!-- OPCIÓN 1: DDR5 & i5 14va Gen -->
+        <section class="build-card build-1">
+            <h2>Ensamble DDR5 (Alto Rendimiento)</h2>
+            <div class="links-list">
+                <a href="https://www.cyberpuerta.mx/Computo-Hardware/Componentes/Procesadores/Procesadores-para-PC/Procesador-Intel-Core-i5-14400F-LGA-1700-4-70GHz-10-Nucleos-20MB-Cache-Incluye-Disipador-14va-Generacion-Raptor-Lake.html" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Procesador</span>
+                        <span class="component-name">Intel Core i5-14400F (14a Gen)</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.cyberpuerta.mx/Computo-Hardware/Componentes/Tarjetas-Madre/Tarjeta-Madre-MSI-B760-GAMING-PLUS-WIFI-ATX-LGA-1700-Intel-B760-192GB-DDR5-HDMI-DP-para-Intel.html" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Tarjeta Madre</span>
+                        <span class="component-name">MSI B760 GAMING PLUS WIFI (DDR5)</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.cyberpuerta.mx/Computo-Hardware/Memorias-RAM-y-Flash/Memorias-RAM-para-PC/Memoria-RAM-XPG-Lancer-Blade-DDR5-5600MHz-8GB-CL46-XMP-EXPO.html" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Memoria RAM</span>
+                        <span class="component-name">XPG Lancer Blade DDR5 8GB 5600MHz</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.cyberpuerta.mx/Computo-Hardware/Discos-Duros-SSD-NAS/SSD/SSD-Kingston-A400-480GB-2-5-SATA-III-450MB-s-Escritura-500-MB-s-Lectura.html" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Almacenamiento</span>
+                        <span class="component-name">SSD Kingston A400 480GB SATA III</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.cyberpuerta.mx/Computo-Hardware/Componentes/Fuentes-de-Poder-para-PC-s/Fuente-de-Poder-MSI-MAG-A750GN-PCIE5-80-PLUS-Gold-ATX-24-pin-ATX-12VHPWR-120mm-750W.html" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Fuente de Poder</span>
+                        <span class="component-name">MSI MAG A750GN 750W 80 PLUS Gold</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.amazon.com.mx/Gabinete-Ocelot-Gaming-ATX-Templado/dp/B085HVPDFK" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Gabinete</span>
+                        <span class="component-name">Gabinete Ocelot Gaming ATX</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.cyberpuerta.mx/Computo-Hardware/Monitores/Monitores/Monitor-MSI-PRO-MP271-E14A-LCD-IPS-27-1920x1080-Full-HD-FreeSync-144Hz-HDMI-DisplayPort-Bocinas-Integradas-Negro.html" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Monitor</span>
+                        <span class="component-name">MSI PRO 27" IPS 144Hz Full HD</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.abasteo.mx/Computo-y-Hardware/Dispositivos-de-Entrada/Kits-de-Teclado-y-Mouse/Kit-de-Teclado-y-Mouse-Logitech-MK470-Inalambrico-RF-Inalambrico-Negro-Espanol.html" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Periféricos</span>
+                        <span class="component-name">Kit Teclado y Mouse Logitech MK470</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- OPCIÓN 2: DDR4 & i5 12va Gen -->
+        <section class="build-card build-2">
+            <h2>Ensamble DDR4 (Costo-Efectivo / Oficina)</h2>
+            <div class="links-list">
+                <a href="https://www.prostar.com.mx/procesador_intel_core_i5_12400f_3.3ghz_18mb_58w_s_1700_hexa_core_12th_gen_sin_gr%C3%A1ficos_con_disipador_bx8071512400f" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Procesador</span>
+                        <span class="component-name">Intel Core i5-12400F (12a Gen)</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.pcel.com/MSI-PRO-B760M-E-DDR4-T-Madre-MSI-PRO-B760M-E-DDR4-Chipset-Intel-B760-Segmento-Alto-Soporta-Intel-14va-13va-y-12va-Gen-Socket-1700-Memoria-DDR4-4800-3600-2133MHz-64GB-Max-510465" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Tarjeta Madre</span>
+                        <span class="component-name">MSI PRO B760M-E (DDR4)</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.amazon.com.mx/gp/aw/d/B07P5HX1C1" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Memoria RAM</span>
+                        <span class="component-name">Corsair Vengeance LPX DDR4 16GB (2x8GB)</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.cyberpuerta.mx/Computo-Hardware/Discos-Duros-SSD-NAS/SSD/SSD-Kingston-A400-480GB-2-5-SATA-III-450MB-s-Escritura-500-MB-s-Lectura.html" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Almacenamiento</span>
+                        <span class="component-name">SSD Kingston A400 480GB SATA III</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.cyberpuerta.mx/Computo-Hardware/Componentes/Fuentes-de-Poder-para-PC-s/Fuente-de-Poder-MSI-MAG-A750GN-PCIE5-80-PLUS-Gold-ATX-24-pin-ATX-12VHPWR-120mm-750W.html" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Fuente de Poder</span>
+                        <span class="component-name">MSI MAG A750GN 750W 80 PLUS Gold</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.amazon.com.mx/Gabinete-Ocelot-Gaming-ATX-Templado/dp/B085HVPDFK" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Gabinete</span>
+                        <span class="component-name">Gabinete Ocelot Gaming ATX</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.cyberpuerta.mx/Computo-Hardware/Monitores/Monitores/Monitor-MSI-PRO-MP271-E14A-LCD-IPS-27-1920x1080-Full-HD-FreeSync-144Hz-HDMI-DisplayPort-Bocinas-Integradas-Negro.html" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Monitor</span>
+                        <span class="component-name">MSI PRO 27" IPS 144Hz Full HD</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+
+                <a href="https://www.abasteo.mx/Computo-y-Hardware/Dispositivos-de-Entrada/Kits-de-Teclado-y-Mouse/Kit-de-Teclado-y-Mouse-Logitech-MK470-Inalambrico-RF-Inalambrico-Negro-Espanol.html" target="_blank" class="component-btn">
+                    <div class="component-info">
+                        <span class="component-type">Periféricos</span>
+                        <span class="component-name">Kit Teclado y Mouse Logitech MK470</span>
+                    </div>
+                    <span class="icon">↗</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
